@@ -2,6 +2,7 @@
 답안 코드를 보니 코드를 정말 쓸데 없이 길게 짰다는 생각이 든다...
 */
 
+// helper를 활용한 답
 function helperReverse(str) {
   let result = '';
 
@@ -16,6 +17,7 @@ function helperReverse(str) {
   return result;
 }
 
+// pure로 바꿔보기
 function pureReverse(str) {
   let result = '';
 
@@ -28,5 +30,5 @@ function pureReverse(str) {
 
 function godReverse(str) {
   if (str.length === 0) return '';
-  return godReverse(str.slice(1)) + str[0];
+  return godReverse(str.slice(1)) + str[0]; // 포인트는 return할 때 순서
 }
