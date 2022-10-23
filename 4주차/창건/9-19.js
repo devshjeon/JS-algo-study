@@ -1,5 +1,7 @@
-function capitalizeWords(strArray) {
-  const result = [];
+// concat이 원본배열을 바꾼다고 생각해서 잘못 풀었음
+
+function capitalizeFirst(strArray) {
+  let result = [];
 
   if (strArray.length === 0) return result;
 
@@ -7,15 +9,9 @@ function capitalizeWords(strArray) {
 
   result.push(firstWord);
 
-  result.concat(capitalizeWords(strArray.slice(1)));
+  result = result.concat(capitalizeFirst(strArray.slice(1)));
 
   return result;
 }
 
-console.log(capitalizeWords(["hi", "bye"]));
-
-// function capitalizeFirstLetter(string) {
-//   return string.charAt(0).toUpperCase() + string.slice(1);
-// }
-
-// console.log(capitalizeFirstLetter("hi"));
+console.log(capitalizeFirst(["car", "taco", "banana"]));
