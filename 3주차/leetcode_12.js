@@ -29,3 +29,6 @@ var intToRoman = function (num) {
 
   return answer;
 };
+
+const num = 10000000000000000000000000000000;
+console.log(parseInt(num));

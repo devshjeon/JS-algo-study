@@ -61,4 +61,28 @@
 
   "2를 몇번 곱해야 N이 되는가..?"라고 생각하면 된다.
 
+
+
+
+#### Naive String Search
+
+* 브루트포스 형식의 문자열 검색
+
+* 긴 문자열과, 짧은 문자열을 이중 반복문으로 돌리는 간단한 방식
+
+* 예제
+
+  ```javascript
+  function naiveSearch(long, short) {
+    let count = 0;
   
+    for(let i = 0; i <= long.length - short.length; i ++) {
+      for(let j = 0; j< short.length;j++) {
+        if (short[j] !== long[i + j]) break;
+        if (j === short.length - 1) count++;
+      }
+    }
+  
+    return count;
+  }
+  ```

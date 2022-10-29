@@ -1,13 +1,12 @@
 function nestedEvenSum(input) {
   let result = 0;
-
-  const keys = Object.keys(input);
-
+  const keys = Object.keys(input); //
   for (i = 0; i < keys.length; i++) {
-    const target = input[keys[i]];
-    if (target % 2 === 0) result += target;
-    else if (typeof target === "object") {
+    let target = input[keys[i]];
+    if (typeof target === "object") {
       result += nestedEvenSum(target);
+    } else if (typeof target === "number" && target % 2 === 0) {
+      result += target;
     }
   }
   return result;
@@ -33,5 +32,5 @@ var obj2 = {
   e: { e: { e: 2 }, ee: "car" },
 };
 
-nestedEvenSum(obj1); // 6
-nestedEvenSum(obj2); // 10
+console.log(nestedEvenSum(obj1)); // 6
+console.log(nestedEvenSum(obj2)); // 10
