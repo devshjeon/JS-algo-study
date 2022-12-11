@@ -102,7 +102,6 @@ class SinglyLinkedList {
     return current;
   }
   set(index, value) {
-    // get 메소드를 이용하여 쉽게 정의할 수 있다.
     var foundNode = this.get(index);
     if (foundNode) {
       foundNode.val = value;
@@ -143,8 +142,6 @@ class SinglyLinkedList {
     }
     console.log(arr);
   }
-
-  // 인터뷰에 많이 나오는 문제
   reverse() {
     var node = this.head;
     this.head = this.tail;
@@ -169,7 +166,7 @@ class SinglyLinkedList {
 
 | insertion | Removal     | Searching | Access |
 | --------- | ----------- | --------- | ------ |
-| O(1)      | O(1) ~ O(N) | O(N)      |        |
+| O(N)      | O(1) ~ O(N) | O(N)      | O(N)   |
 
 * Insertion(삽입): 어디에 삽입하든 O(1)
 
